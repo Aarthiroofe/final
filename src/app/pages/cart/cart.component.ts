@@ -32,7 +32,7 @@ export class CartComponent implements OnInit {
 
     this.cartreceivedata.forEach((_element: any) => {
       if(this.totalprice == NaN){
-      this.totalprice =this.totalprice+ _element.countingprice
+      this.totalprice = this.totalprice+_element.countingprice
          
       }
       console.log(   this.totalprice += _element.countingprice);
@@ -86,7 +86,7 @@ export class CartComponent implements OnInit {
       //   this.totalprice =_element.countingprice
       //   console.log(   this.totalprice += _element.countingprice);
       //   }); 
-      this.totalprice = this.totalprice+data.price
+      this.totalprice = data.price+this.totalprice
   }
 
   decrement(data: any) {
@@ -100,9 +100,11 @@ export class CartComponent implements OnInit {
     else(
       data.countingprice=data.price
     )
-    console.log(data.price);
+      
     this.totalprice = this.totalprice-data.price
+    
+      
+    console.log(data.price);
   }
  
-
 }
